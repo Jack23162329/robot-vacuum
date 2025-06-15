@@ -2,6 +2,7 @@
 
 *A lightweight robot-vacuum model built in Fusion 360, delivered with ROS‑ready components for quick SLAM integration.*
 This repository contains the 3‑D model (URDF/Xacro), Gazebo plugins, and RViz layouts for ROS Noetic + Gazebo 11. where we are able to create map by moving robot-vacuum 
+Where Gazebo demo world is directory copy by turtlebot3. I didn't make it by myself.
 
 ---
 
@@ -101,7 +102,7 @@ cleaning_machine_description/
 | **Dual rotating brushes** | `joint_velocity_controller` | controlled via **`/brush_cmd`** (`geometry_msgs/Twist`) |
 | **2‑D Lidar** | Hokuyo plugin → **`/scan`** | sensor frame `lidar_link` fixed to `base_link` |
 | **RViz layouts** | `rviz/urdf*.rviz` | ready‑made **Grid / Laser / Map** displays |
-| **Gazebo demo world** | `worlds/turtlebot3_house.world` | multi‑room interior with obstacles |
+| **Gazebo demo world** | `worlds/turtlebot3_house.world` | multi‑room interior with obstacles, where I just copy the maps from turtlebot3 |
 
 ---
 
