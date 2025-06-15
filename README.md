@@ -10,7 +10,7 @@ This repository contains the 3‑D model (URDF/Xacro), Gazebo plugins, and RViz 
 
 ---
 
-## Requirements
+# Requirements 👍
 | Software | Version |
 |----------|---------|
 | **Ubuntu** | 20.04 LTS |
@@ -29,7 +29,7 @@ sudo apt install ros-noetic-gazebo-ros-pkgs \
 
 ---
 
-## Installation
+# Installation 👾
 ```bash
 # 1) create a catkin workspace (skip if you already have one)
 mkdir -p ~/catkin_ws/src && cd ~/catkin_ws/src
@@ -44,17 +44,18 @@ cd ~/catkin_ws
 catkin_make
 source devel/setup.bash
 ```
-## Robot appearance Demo Video
-https://github.com/user-attachments/assets/d0a98370-3f69-4563-8969-e6da83003fc7
----
+# Robot appearance Demo Video ▶️
 
-## Quick Start
+https://github.com/user-attachments/assets/d0a98370-3f69-4563-8969-e6da83003fc7
+
+# Quick Start
 | Action | Command |
 |--------|---------|
 | **Launch Gazebo + RViz** | `roslaunch cleaning_machine_description gazebo.launch`|
-# Demo Video 📻
-https://youtu.be/Kb1GFwbw0Os 
----
+# Demo Video ▶️
+
+https://youtu.be/Kb1GFwbw0Os |
+
 | **View URDF only (no Gazebo)** | `roslaunch cleaning_machine_description display.launch`|
 
 **RViz layouts**  
@@ -63,7 +64,7 @@ https://youtu.be/Kb1GFwbw0Os
 
 ---
 
-## Directory Tree
+# Directory Tree 🌲
 ```
 cleaning_machine_description/
 ├── launch/
@@ -87,7 +88,7 @@ cleaning_machine_description/
 
 ---
 
-## Feature Overview
+## Feature Overview 😸
 | Feature | File / Plugin | Notes |
 |---------|---------------|-------|
 | **Four‑wheel differential drive** | `urdf/cleaning_machine.gazebo` (`libgazebo_ros_diff_drive`) | left joint = **Revolute 7** · right joint = **Revolute 8** |
@@ -98,7 +99,7 @@ cleaning_machine_description/
 
 ---
 
-## FAQ / Troubleshooting
+## FAQ / Troubleshooting 😵‍💫
 | Issue | Fix |
 |-------|-----|
 | RViz shows **“No transform from `left_clean_1`”** | Enable `<publishJointStates>true>` in `cleaning_machine.gazebo`, or change the brush `<joint>` to `type="fixed"`. |
