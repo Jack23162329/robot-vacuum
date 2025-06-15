@@ -49,7 +49,7 @@ source devel/setup.bash
 https://github.com/user-attachments/assets/d0a98370-3f69-4563-8969-e6da83003fc7
 
 # Quick Start 😊
-Launch Gazebo + RViz + SLAM 
+Launch Gazebo + RViz + SLAM ( ** Very Important ** -> roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch is build inside launch file, just use the same termainal to control the robot.)
 ```bash 
 roslaunch cleaning_machine_description gazebo.launch
 ```
