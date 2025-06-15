@@ -56,7 +56,7 @@ roslaunch cleaning_machine_description gazebo.launch
 
 > **⚠️ IMPORTANT – TELEOP CONTROL**  
 > The `teleop_twist_keyboard.py` node is launched **inside `gazebo.launch`**.  
-> Keep **the same terminal window** focused and drive the robot with `I J K L` and other keyboard nearby
+> Keep **the same terminal window** focused and drive the robot with `I J K L` and other keyboard keys nearby
 
 ## Demo Video ▶️
 
