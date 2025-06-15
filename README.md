@@ -49,10 +49,15 @@ source devel/setup.bash
 https://github.com/user-attachments/assets/d0a98370-3f69-4563-8969-e6da83003fc7
 
 # Quick Start 😊
-Launch Gazebo + RViz + SLAM ( ** Very Important ** -> roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch is build inside launch file, just use the same termainal to control the robot.)
+Launch Gazebo + RViz + SLAM 
 ```bash 
 roslaunch cleaning_machine_description gazebo.launch
 ```
+
+> **⚠️ IMPORTANT – TELEOP CONTROL**  
+> The `teleop_twist_keyboard.py` node is launched **inside `gazebo.launch`**.  
+> Keep **the same terminal window** focused and drive the robot with `I J K L` and other keyboard nearby
+
 ## Demo Video ▶️
 
 https://youtu.be/Kb1GFwbw0Os 
