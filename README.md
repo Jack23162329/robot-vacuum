@@ -49,16 +49,18 @@ source devel/setup.bash
 https://github.com/user-attachments/assets/d0a98370-3f69-4563-8969-e6da83003fc7
 
 # Quick Start 😊
-| Action | Command |
-|--------|---------|
-| **Launch Gazebo + RViz** | ``` bash roslaunch cleaning_machine_description gazebo.launch```|
+Launch Gazebo + RViz + SLAM 
+```bash 
+roslaunch cleaning_machine_description gazebo.launch
+```
 # Demo Video ▶️
-
 https://youtu.be/Kb1GFwbw0Os 
+![Final Map](https://github.com/user-attachments/assets/025e07ae-5d88-4a32-a3f0-c17acb991360)
 
-| Action | Command |
-|--------|---------|
-| **View URDF only (no Gazebo)** | ```bash roslaunch cleaning_machine_description display.launch```|
+View URDF by rviz only (no Gazebo)
+```bash
+roslaunch cleaning_machine_description display.launch
+```
 
 **RViz layouts**  
 * `rviz/urdf_slam.rviz` — adds **LaserScan** and `/map` displays for future SLAM (default settings)
