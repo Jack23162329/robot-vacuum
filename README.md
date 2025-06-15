@@ -53,8 +53,10 @@ Launch Gazebo + RViz + SLAM
 ```bash 
 roslaunch cleaning_machine_description gazebo.launch
 ```
-# Demo Video ▶️
+## Demo Video ▶️
+
 https://youtu.be/Kb1GFwbw0Os 
+
 ![Final Map](https://github.com/user-attachments/assets/025e07ae-5d88-4a32-a3f0-c17acb991360)
 
 View URDF by rviz only (no Gazebo)
@@ -62,7 +64,7 @@ View URDF by rviz only (no Gazebo)
 roslaunch cleaning_machine_description display.launch
 ```
 
-**RViz layouts**  
+## RViz layouts
 * `rviz/urdf_slam.rviz` — adds **LaserScan** and `/map` displays for future SLAM (default settings)
 * `rviz/urdf.rviz` — model‑only  
 
