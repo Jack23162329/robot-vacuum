@@ -1,0 +1,41 @@
+<launch>
+  <arg name="x_pos" default="-1.0"/>  
+  <arg name="y_pos" default="-2.0"/>
+  <arg name="z_pos" default="0.0"/>
+  <arg name="yaw"    default="3.14"/>
+
+  <param name="robot_description" command="$(find xacro)/xacro $(find cleaning_machine_description)/urdf/cleaning_machine.xacro"/>
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -R 0 -P 0 -Y $(arg yaw) -param robot_description -urdf -model cleaning_machine"/>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find cleaning_machine_description)/worlds/turtlebot3_house.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+  <!-- shows rviz file of our robot to build map -->
+  <arg   name="rvizconfig" default="$(find cleaning_machine_description)/rviz/urdf_slam.rviz"/>
+  <node  pkg="rviz" type="rviz" name="rviz" args="-d $(arg rvizconfig)" /> 
+  
+  <!-- turn on gmapping for SLAM -->
+  <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
+    <param name="base_frame" value="base_link"/>
+    <param name="odom_frame" value="odom"/>
+    <param name="linearUpdate" value="0.05"/>
+    <param name="angularUpdate" value="0.05"/>
+    <param name="minimumScore" value="100"/>
+  </node>
+  
+  <!-- giving topic /brush_cmd rotation speed -->
+  <node pkg="rostopic" type="rostopic" name="brush_cmd_pub"
+        args="pub /brush_cmd geometry_msgs/Twist
+              '{linear: {x: 5.0, y: 0.0, z: 0.0},
+                angular: {x: 0.0, y: 0.0, z: 0.0}}'
+              -r 30"
+        output="screen"/>
+
+  <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py"
+        name="teleop_keyboard" output="screen"/>
+
+</launch>

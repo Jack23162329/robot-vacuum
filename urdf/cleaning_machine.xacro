@@ -1,0 +1,140 @@
+<?xml version="1.0" ?>
+<robot name="cleaning_machine" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find cleaning_machine_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find cleaning_machine_description)/urdf/cleaning_machine.trans" />
+<xacro:include filename="$(find cleaning_machine_description)/urdf/cleaning_machine.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.0002906782630312663 0.0008339005906305713 0.04370232569637388" rpy="0 0 0"/>
+    <mass value="18.427817429305076"/>
+    <inertia ixx="0.081335" iyy="0.074758" izz="0.147554" ixy="-3.1e-05" iyz="-0.000223" ixz="0.000111"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://cleaning_machine_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://cleaning_machine_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_clean_1">
+  <inertial>
+    <origin xyz="-0.0006167535496404142 0.0014443065357791635 -0.0072285411740625315" rpy="0 0 0"/>
+    <mass value="0.026463243073747027"/>
+    <inertia ixx="4e-06" iyy="4e-06" izz="6e-06" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.05 0.08 -0.018" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://cleaning_machine_description/meshes/left_clean_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.05 0.08 -0.018" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://cleaning_machine_description/meshes/left_clean_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_clean_1">
+  <inertial>
+    <origin xyz="-0.0008613498880776782 0.0006068353089816875 -0.0073194771257764114" rpy="0 0 0"/>
+    <mass value="0.025786790240048048"/>
+    <inertia ixx="3e-06" iyy="3e-06" izz="6e-06" ixy="1e-06" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.06 0.08 -0.018" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://cleaning_machine_description/meshes/right_clean_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.06 0.08 -0.018" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://cleaning_machine_description/meshes/right_clean_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_wheel_1">
+  <inertial>
+    <origin xyz="-0.015000000000000013 7.845911210828393e-08 3.469446951953614e-18" rpy="0 0 0"/>
+    <mass value="0.46240316870024756"/>
+    <inertia ixx="0.000145" iyy="0.000107" izz="0.000107" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.08 0.005994 -0.0171" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://cleaning_machine_description/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.08 0.005994 -0.0171" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://cleaning_machine_description/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_wheel_1">
+  <inertial>
+    <origin xyz="0.015 5.449335406006173e-08 0.0" rpy="0 0 0"/>
+    <mass value="0.46240316870024745"/>
+    <inertia ixx="0.000145" iyy="0.000107" izz="0.000107" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.08 0.005583 -0.0171" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://cleaning_machine_description/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.08 0.005583 -0.0171" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://cleaning_machine_description/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Revolute 5" type="continuous">
+  <origin xyz="0.05 -0.08 0.018" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_clean_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="Revolute 6" type="continuous">
+  <origin xyz="-0.06 -0.08 0.018" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_clean_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="Revolute 7" type="continuous">
+  <origin xyz="0.08 -0.005994 0.0171" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_wheel_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="Revolute 8" type="continuous">
+  <origin xyz="-0.08 -0.005583 0.0171" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_wheel_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+</robot>
