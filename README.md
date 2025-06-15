@@ -54,8 +54,10 @@ https://github.com/user-attachments/assets/d0a98370-3f69-4563-8969-e6da83003fc7
 | **Launch Gazebo + RViz** | `roslaunch cleaning_machine_description gazebo.launch`|
 # Demo Video ▶️
 
-https://youtu.be/Kb1GFwbw0Os |
+https://youtu.be/Kb1GFwbw0Os 
 
+| Action | Command |
+|--------|---------|
 | **View URDF only (no Gazebo)** | `roslaunch cleaning_machine_description display.launch`|
 
 **RViz layouts**  
