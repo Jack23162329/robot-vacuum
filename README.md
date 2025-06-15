@@ -44,7 +44,8 @@ cd ~/catkin_ws
 catkin_make
 source devel/setup.bash
 ```
-
+## Robot appearance Demo Video
+https://github.com/user-attachments/assets/d0a98370-3f69-4563-8969-e6da83003fc7
 ---
 
 ## Quick Start
@@ -52,7 +53,8 @@ source devel/setup.bash
 |--------|---------|
 | **Launch Gazebo + RViz** | `roslaunch cleaning_machine_description gazebo.launch`|
 # Demo Video 📻
-https://youtu.be/Kb1GFwbw0Os
+https://youtu.be/Kb1GFwbw0Os 
+---
 | **View URDF only (no Gazebo)** | `roslaunch cleaning_machine_description display.launch`|
 
 **RViz layouts**  
