@@ -1,11 +1,6 @@
 # robot-vacuumAdd commentMore actions
 
 *A lightweight robot-vacuum model built in Fusion 360, delivered with ROS‑ready components for quick SLAM integration.*
-
----
-
-## Cleaning Machine Description 📦
-
 This repository contains the 3‑D model (URDF/Xacro), Gazebo plugins, and RViz layouts for ROS Noetic + Gazebo 11. where we are able to create map by moving robot-vacuum 
 
 ---
