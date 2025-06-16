@@ -104,11 +104,3 @@ cleaning_machine_description/
 | **RViz layouts** | `rviz/urdf*.rviz` | ready‑made **Grid / Laser / Map** displays |
 | **Gazebo demo world** | `worlds/turtlebot3_house.world` | multi‑room interior with obstacles, where I just copy the maps from turtlebot3 |
 
----
-
-## FAQ / Troubleshooting 😵‍💫
-| Issue | Fix |
-|-------|-----|
-| RViz shows **“No transform from `left_clean_1`”** | Enable `<publishJointStates>true>` in `cleaning_machine.gazebo`, or change the brush `<joint>` to `type="fixed"`. |
-| Robot does **not** move in Gazebo | Make sure `controller.launch` is running **and** `/cmd_vel` is publishing. |
-| Model looks off‑scale | Check STL `<scale>` and verify `wheelDiameter` / `wheelSeparation`. |
